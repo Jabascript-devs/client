@@ -10,14 +10,12 @@ const Home = () => {
 
     return (
         <>
-            <div>
-                <div className="banner">
-                    <img className="banner-library" src="/img/banner-library.png" alt="library banner"/>
-                </div>
-                <div className="book-user-choice">
-                    <button className="choice-btn" onClick={()=>{navigateTo("/books")}}>Books</button>
-                    <button className="choice-btn" onClick={()=>{navigateTo("/users")}}>User</button>
-                </div>
+            <div className="banner">
+                <img className="banner-library" src="/img/banner-library.png" alt="library banner"/>
+            </div>
+            <div className="book-user-choice">
+                <button className="default-btn" onClick={()=>{navigateTo("/books")}}>Books</button>
+                <button className="default-btn" onClick={()=>{navigateTo("/users")}}>User</button>
             </div>
         </>
     )

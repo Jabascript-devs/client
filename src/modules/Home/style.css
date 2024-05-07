@@ -23,7 +23,7 @@ html, body {
     align-items: center;
 }
 
-.choice-btn {
+.default-btn {
     background-color: #6c2100;
     color: #fff;
     border:none;
@@ -33,7 +33,7 @@ html, body {
     width: 150px;
 }
 
-.choice-btn:hover {
+.default-btn:hover {
     background-color: #4b1302;
     transition: 0.3s;
 }
@@ -45,7 +45,7 @@ html, body {
         gap: 20px;
     }
 
-    .choice-btn {
+    .default-btn {
         height:20px;
         width: 70px;
     }
