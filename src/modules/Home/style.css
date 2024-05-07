@@ -35,3 +35,11 @@ html, body {
     background-color: #4b1302;
     transition: 0.3s;
 }
+
+@media (max-width: 600px) {
+    .book-user-choice {
+        justify-content: center;
+        flex-direction: column;
+        padding: 30px 100px;
+    }
+}
