@@ -1,0 +1,52 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.banner {
+    width: auto;
+}
+
+.banner-library {
+    width: 100%;
+    height: auto;
+}
+
+.book-user-choice {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-direction: row;
+    padding: 100px 0;
+    align-items: center;
+}
+
+.default-btn {
+    background-color: #6c2100;
+    color: #fff;
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    height:50px;
+    width: 150px;
+}
+
+.default-btn:hover {
+    background-color: #4b1302;
+    transition: 0.3s;
+}
+
+@media (max-width: 600px) {
+    .book-user-choice {
+        flex-direction: column;
+        padding: 150px 50px;
+        gap: 20px;
+    }
+
+    .default-btn {
+        height:20px;
+        width: 70px;
+    }
+}
