@@ -16,9 +16,11 @@ html, body {
 
 .book-user-choice {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 100px;
     flex-direction: row;
-    padding: 100px 300px;
+    padding: 100px 0;
+    align-items: center;
 }
 
 .choice-btn {
@@ -27,8 +29,8 @@ html, body {
     border:none;
     border-radius:10px;
     padding:15px;
-    min-height:50px;
-    min-width: 150px;
+    height:50px;
+    width: 150px;
 }
 
 .choice-btn:hover {
@@ -38,8 +40,13 @@ html, body {
 
 @media (max-width: 600px) {
     .book-user-choice {
-        justify-content: center;
         flex-direction: column;
-        padding: 30px 100px;
+        padding: 150px 50px;
+        gap: 20px;
+    }
+
+    .choice-btn {
+        height:20px;
+        width: 70px;
     }
 }
