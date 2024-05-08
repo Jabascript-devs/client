@@ -8,6 +8,7 @@ import {getBooks, postBook} from "../../api/books.js"
 const Books = () => {
     const [books, setBooks] = useState([])
     const [result, setResult] = useState('')
+    const [searchValue, setSearchValue] = useState("")
 
     const coverPath = '/img/'
 
@@ -49,14 +50,31 @@ const Books = () => {
             name: 'author',
             selector: row => row.author.fullName,
         },
+        {
+            name: 'link',
+            selector: row => <a href={`/books/${row.id}`}>{row.name}</a>,
+        },
     ];
 
     const createBook = (book) => {
         postBook(book).then(result => setResult(result.status.toString()))
     }
 
+    const handleSearchInputChange = (e) => {
+        setSearchValue(e.target.value);
+    };
+
+    const getFilteredBooks = () => {
+        if (!searchValue) return books;
+        return books.filter((book) =>
+            book.name.toLowerCase().includes(searchValue.toLowerCase())
+        );
+    };
+
     useEffect(() => {
-        getBooks().then(({data}) => setBooks(data))
+        getBooks().then(({data}) => {
+            setBooks(data)
+        })
     }, [])
 
     return (
@@ -95,10 +113,15 @@ const Books = () => {
                 </form>
                 <div id="response">{result.length? result: null}</div>
             </div>
+            <input type="text"
+                   onChange={handleSearchInputChange}
+                   value={searchValue}
+                   placeholder="Search by name"
+            />
             <div className="book-list">
                 {books.length ? <DataTable
                     columns={columns}
-                    data={books}
+                    data={getFilteredBooks()}
                     pagination
                     paginationPerPage={10}
                     paginationRowsPerPageOptions={[10, 20]}
