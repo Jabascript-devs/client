@@ -52,7 +52,7 @@ const Books = () => {
         },
         {
             name: 'link',
-            selector: row => <a href={`/books/${row.id}`}>{row.name}</a>,
+            selector: row => <a href={`/book/${row.id}`}>{row.name}</a>,
         },
     ];
 
@@ -77,7 +77,7 @@ const Books = () => {
         })
     }, [])
 
-    return (
+    return books ? (
         <>
             <div className="book-list-header">
                 <div className="text">Book List</div>
@@ -128,7 +128,7 @@ const Books = () => {
                 /> : null}
             </div>
         </>
-    )
+    ) : null;
 }
 
 export default Books;
