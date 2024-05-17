@@ -25,6 +25,9 @@ const ReturnBookForm = () => {
                 <label htmlFor="date-return">Return date:</label>
                 <input type="text" id="date-return" name="date-return" {...register("dateReturned")} /><br /><br />
 
+                <label htmlFor="book-state">Book state:</label>
+                <input type="text" id="book-state" name="book-state" {...register("state")} /><br /><br />
+
                 <button className="default-btn" type="submit" >Submit</button>
             </form>
             <div id="response">{returnBookResult.length? returnBookResult: null}</div>
