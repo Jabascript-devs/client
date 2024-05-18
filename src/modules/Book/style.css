@@ -1,0 +1,19 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.book-page {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    padding: 50px;
+}
+
+.book-options {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
