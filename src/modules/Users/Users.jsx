@@ -42,7 +42,7 @@ const Users = () => {
         },
         {
             name: 'link',
-            selector: row => <a href={`/books/${row.id}`}>{row.fullName}</a>,
+            selector: row => <a href={`/user/${row.id}`}>{row.fullName}</a>,
         },
     ];
 
