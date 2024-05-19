@@ -31,3 +31,9 @@ html, body {
     max-width: 50px;
     max-height: 50px;
 }
+
+.return-book {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

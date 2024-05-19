@@ -32,7 +32,6 @@ const Book = () => {
             <div className="book-options">
                 <EditBookForm bookId={bookId}/>
                 <OrderBookForm bookId={bookId}/>
-                <ReturnBookForm />
                 <DeleteBookForm bookId={bookId}/>
             </div>
         </div>
