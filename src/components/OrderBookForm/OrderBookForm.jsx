@@ -14,14 +14,26 @@ const OrderBookForm = (props) => {
         handleSubmit,
     } = useForm()
 
+    function addDays(dateString, days) {
+        const parts = dateString.split('-');
+        const date = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
+        date.setDate(date.getDate() + days);
+
+        return date.toLocaleDateString('en-GB', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+        }).replace(/\//g, '-');
+    }
+
     const orderBook = (order) => {
         order.dateTaken = new Date().toLocaleDateString('en-GB', {
             day: '2-digit',
             month: '2-digit',
             year: 'numeric'
         }).replace(/\//g, '-')
+        order.expectedDateReturn = addDays(order.dateTaken, 2)
         order.book = bookId
-
         postOrder(order).then(result => setOrderBookResult(result.status.toString())).catch(err => setOrderBookResult(err.response.data.message))
     }
 
