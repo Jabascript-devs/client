@@ -11,6 +11,7 @@ const BookProperties = (props) => {
         <div className="book-props">
             <img className="book-cover2" src={`${coverPath}`+currentBook.image+'.png'}  alt="book cover"/>
             <h2 className="book-name">name: {currentBook.name}</h2>
+            <h3 className="book-genre">genre: {currentBook.genre}</h3>
             <h3 className="book-deposit">deposit: {currentBook.deposit}</h3>
             <h3 className="book-day-price">dayPrice: {currentBook.dayPrice}</h3>
             <h3 className="book-discount">discount: {currentBook.discount}</h3>

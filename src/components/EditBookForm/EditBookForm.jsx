@@ -32,6 +32,9 @@ const EditBookForm = (props) => {
                 <label htmlFor="image">Image:</label>
                 <input type="text" id="image" name="image" {...register("image")} /><br /><br />
 
+                <label htmlFor="genre">Genre:</label>
+                <input type="text" id="genre" name="genre" {...register("genre")} /><br /><br />
+
                 <label htmlFor="deposit">Deposit:</label>
                 <input type="number" id="deposit" name="deposit" {...register("deposit")} /><br /><br />
 
