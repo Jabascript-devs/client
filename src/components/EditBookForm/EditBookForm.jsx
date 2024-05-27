@@ -2,10 +2,8 @@ import {useForm} from "react-hook-form";
 import {useState, useEffect} from "react";
 import {patchBook} from "../../api/books.js";
 import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
 
 const EditBookForm = (props) => {
-    const navigate = useNavigate()
     const currentBook = props.currentBook;
 
     const [editBookResult, setEditBookResult] = useState('')
@@ -30,7 +28,6 @@ const EditBookForm = (props) => {
             setValue("bookState", currentBook.bookState)
             setValue("author", currentBook.author?.id ? currentBook.author.id : "")
         }
-        console.log('currentBook', currentBook);
     }, [currentBook]);
     
     
@@ -48,7 +45,7 @@ const EditBookForm = (props) => {
             <form id="bookEditForm" className="form-default" onSubmit={handleSubmit(editBook)}>
                 <div className="label-input-pair">
                     <label htmlFor="name" className="text-inside">Name:</label>
-                    <input type="text" id="name" name="name" placeholder={currentBook.name} className="input-default input-inside" {...register("name")} />
+                    <input type="text" id="name" name="name" className="input-default input-inside" {...register("name")} />
                 </div>
 
                 <div className="label-input-pair">

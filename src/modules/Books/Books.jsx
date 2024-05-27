@@ -88,7 +88,7 @@ const Books = () => {
 
     return books ? (
         <>
-            <button className="back-button" onClick={() => navigate("/")}>&lt;-</button>
+            <button className="back-button" onClick={() => navigate(-1)}>&lt;-</button>
             <div className="book-list-header">
                 <div className="text">Book List</div>
             </div>

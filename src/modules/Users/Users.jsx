@@ -81,7 +81,7 @@ const Users = () => {
 
     return (
         <>
-            <button className="back-button" onClick={() => navigate("/")}>&lt;-</button>
+            <button className="back-button" onClick={() => navigate(-1)}>&lt;-</button>
             <div className="user-list-header">
                 <div className="text">User List</div>
             </div>

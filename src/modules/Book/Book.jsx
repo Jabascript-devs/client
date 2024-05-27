@@ -27,7 +27,7 @@ const Book = () => {
 
     return currentBook ? (
         <div className="book-page">
-            <button className="back-button" onClick={() => navigate("/books")}>&lt;-</button>
+            <button className="back-button" onClick={() => navigate(-1)}>&lt;-</button>
             <div className="book-properties">
                 <BookProperties currentBook={currentBook}/>
             </div>

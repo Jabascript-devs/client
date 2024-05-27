@@ -10,8 +10,8 @@ const UserProperties = (props) => {
             <h2 className="user-name">Full name: {currentUser.fullName}</h2>
             <h3 className="user-deposit">Balance: {currentUser.balance}</h3>
             <h3 className="user-day-price">Address: {currentUser.address}</h3>
-            <h3 className="user-discount">phone number: {currentUser.phoneNumber}</h3>
-            <h3 className="user-available">user category: {currentUser.userCategory ? currentUser.userCategory : 'none'}</h3>
+            <h3 className="user-discount">Phone number: {currentUser.phoneNumber}</h3>
+            <h3 className="user-available">User category: {currentUser.userCategory ? currentUser.userCategory : 'none'}</h3>
         </div>
     ) : null;
 };

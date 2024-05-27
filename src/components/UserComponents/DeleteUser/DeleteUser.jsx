@@ -23,7 +23,7 @@ const DeleteUser = (props) => {
       <form id="userDeleteForm" onSubmit={handleSubmit(removeUser)}>
         <button className="default-btn" type="submit" >Submit</button>
       </form>
-      <div id="response">{deleteUserResult.length ? deleteUserResult : null}</div>
+      <div id="response">{deleteUserResult.length ? "Response: " + deleteUserResult : null}</div>
     </div>
   )
 }

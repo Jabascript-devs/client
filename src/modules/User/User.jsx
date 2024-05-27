@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import DataTable from 'react-data-table-component';
 
 import "./style.css"
 import { getUser } from "../../api/users.js";
 import { getUserOrders } from "../../api/order.js";
 import UserProperties from "../../components/UserComponents/UserProperties/UserProperties"
-import EditUserForm from "../../components/UserComponents/EditUser/EditBookForm";
+import EditUserForm from "../../components/UserComponents/EditUser/EditUserForm.jsx";
 import DeleteUser from "../../components/UserComponents/DeleteUser/DeleteUser";
 
 const columns = [
@@ -32,6 +32,7 @@ const User = () => {
     const [currentUser, setCurrentUser] = useState({})
     const [orders, setOrders] = useState([])
     const [searchValue, setSearchValue] = useState("")
+    const navigate = useNavigate()
 
     const handleSearchInputChange = (e) => {
         setSearchValue(e.target.value);
@@ -68,30 +69,33 @@ const User = () => {
 
     return currentUser ? (
         <div className="user-page">
-            <div className="user-properties">
+            <button className="back-button" onClick={() => navigate(-1)}>&lt;-</button>
+            <div className="user-control">
                 <UserProperties currentUser={currentUser} />
+                <EditUserForm userId={userId} currentUser={currentUser} />
+                <DeleteUser userId={userId} />
             </div>
-            <div className="user-options">
-                <EditUserForm userId={userId} />
-                <div>
-                    <h1 className="user-name">User Orders</h1>
+            <div className="user-orders">
+                <h1 className="user-props">User Orders</h1>
+                <div className="search">
                     <input type="text"
                         onChange={handleSearchInputChange}
                         value={searchValue}
                         placeholder="Search by book name"
+                        className="input-default"
                     />
-                    <div className="book-list">
-                        {orders.length ? <DataTable
-                            columns={columns}
-                            data={getFilteredOrders()}
-                            pagination
-                            paginationPerPage={10}
-                            paginationRowsPerPageOptions={[10, 20]}
-                        /> : null}
-                    </div>
+                    <button className="default-btn btn-manage" onClick={() => setSearchValue("")}>Clear</button>
+                </div>
+                <div className="book-list">
+                    {orders.length ? <DataTable
+                        columns={columns}
+                        data={getFilteredOrders()}
+                        pagination
+                        paginationPerPage={10}
+                        paginationRowsPerPageOptions={[10, 20]}
+                    /> : null}
                 </div>
             </div>
-            <DeleteUser userId={userId} />
         </div>
     ) : null;
 }

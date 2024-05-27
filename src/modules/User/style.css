@@ -7,13 +7,39 @@ html, body {
 
 .user-page {
     display: flex;
-    flex-direction: row;
-    gap: 100px;
-    padding: 50px;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.user-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .user-options {
     display: flex;
     flex-direction: column;
     gap: 100px;
+}
+
+.edit-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 40%;
+}
+
+.edit-user-form {}
+
+.delete-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-props {
+    color: #4b1302;
 }
