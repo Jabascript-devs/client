@@ -40,13 +40,15 @@ const OrderBookForm = (props) => {
     return (
         <div className="order-book">
             <div className="text">Order Book</div>
-            <form id="bookOrderForm" onSubmit={handleSubmit(orderBook)}>
-                <label htmlFor="user-id">User id:</label>
-                <input type="text" id="user-id" name="user-id" {...register("user")} /><br /><br />
+            <form id="bookOrderForm" className="form-default" onSubmit={handleSubmit(orderBook)}>
+                <div className="label-input-pair">
+                    <label htmlFor="user-id" className="text-inside">User id:</label>
+                    <input type="text" id="user-id" name="user-id" className="input-default input-inside" {...register("user")} /><br /><br />
+                </div>
 
                 <button className="default-btn" type="submit" >Submit</button>
             </form>
-            <div id="response">{orderBookResult.length? orderBookResult: null}</div>
+            <div id="response">{orderBookResult.length ? "Response: " + orderBookResult : null}</div>
         </div>
     )
 }

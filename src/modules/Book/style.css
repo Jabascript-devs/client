@@ -7,9 +7,41 @@ html, body {
 
 .book-page {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75vh;
     flex-direction: row;
     gap: 100px;
-    padding: 50px;
+    padding-top: 5rem;
+}
+
+.edit-book {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 85vh;
+}
+
+.order-book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.delete-book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.book-order-delete {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85vh;
 }
 
 .book-options {

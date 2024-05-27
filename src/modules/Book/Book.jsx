@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 import "./style.css"
 import {getBook} from "../../api/books.js";
@@ -11,6 +11,7 @@ import DeleteBookForm from "../../components/DeleteBookForm/DeleteBookForm.jsx";
 
 const Book = () => {
     const [currentBook, setCurrentBook] = useState({})
+    const navigate = useNavigate()
 
     const {bookId} = useParams()
 
@@ -26,11 +27,14 @@ const Book = () => {
 
     return currentBook ? (
         <div className="book-page">
+            <button className="back-button" onClick={() => navigate(-1)}>&lt;-</button>
             <div className="book-properties">
                 <BookProperties currentBook={currentBook}/>
             </div>
-            <div className="book-options">
-                <EditBookForm bookId={bookId}/>
+            <div className="book-edit">
+                <EditBookForm bookId={bookId} currentBook={currentBook}/>
+            </div>
+            <div className="book-order-delete">
                 <OrderBookForm bookId={bookId}/>
                 <DeleteBookForm bookId={bookId}/>
             </div>

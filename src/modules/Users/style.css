@@ -9,7 +9,56 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 0 0 50px 0;
+}
+
+.manage-and-search {
+    display: flex;
+    padding: 0 2rem;
+    justify-content: space-between;
+}
+
+.search {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.manage {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.create-user-title {
+    padding: 1rem 0;
+}
+
+.create-user-blur {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(.15rem);
+    z-index: 1;
+}
+
+.create-user-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 90vh;
+    background-color: white;
+    border-radius: 2rem;
+    z-index: 1;
+    position: relative;
+}
+
+.form-margin {
+    margin: 1.5rem 0;
 }
 
 .text {
@@ -21,8 +70,19 @@ html, body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 50%;
 }
 
 .user-list {
     padding: 20px;
+}
+
+.text-inside {
+    width: 35%;
+    font-size: 1.2rem;
+    color: #6c2100;
+}
+
+.input-inside {
+    width: 65%;
 }
