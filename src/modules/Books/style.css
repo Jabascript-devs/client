@@ -9,7 +9,24 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 0 0 50px 0;
+}
+
+.manage-and-search {
+    display: flex;
+    padding: 0 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.manage {
+    display: flex;
+    gap: 1.5rem;
 }
 
 .text {
@@ -17,10 +34,66 @@ html, body {
     font-size: 40px;
 }
 
+.create-book-blur {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(.15rem);
+    z-index: 1;
+}
+
+.create-book-bg {
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+    height: 90vh;
+    background-color: white;
+    border-radius: 2rem;
+    z-index: 1;
+    position: relative;
+}
+
+.return-book-blur {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(.15rem);
+    z-index: 1;
+}
+
+.return-book-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 90vh;
+    background-color: white;
+    border-radius: 2rem;
+    z-index: 1;
+    position: relative;
+}
+
 .create-book {
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 50%;
+}
+
+.create-book-title {
+    padding: 1rem 0;
 }
 
 .book-list {
@@ -36,4 +109,33 @@ html, body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 50%;
+}
+
+.form-margin {
+    margin: 1.5rem 0;
+}
+
+.return-book-title {
+    padding: 2rem 0;
+}
+
+.text-inside {
+    width: 20%;
+    font-size: 1.2rem;
+    color: #6c2100;
+}
+
+.input-inside {
+    width: 80%;
+}
+
+.text-inside-return {
+    width: 30%;
+    font-size: 1.2rem;
+    color: #6c2100;
+}
+
+.input-inside-return {
+    width: 70%;
 }

@@ -10,9 +10,7 @@ const Home = () => {
 
     return (
         <>
-            <div className="banner">
-                <img className="banner-library" src="/img/banner-library.png" alt="library banner"/>
-            </div>
+            <div className="background-main"/>
             <div className="book-user-choice">
                 <button className="default-btn" onClick={()=>{navigateTo("/books")}}>Books</button>
                 <button className="default-btn" onClick={()=>{navigateTo("/users")}}>User</button>

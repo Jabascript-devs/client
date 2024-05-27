@@ -1,14 +1,16 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import DataTable from 'react-data-table-component';
 
 import "./style.css"
-import {getBooks} from "../../api/books.js"
+import { getBooks } from "../../api/books.js"
 import ReturnBookForm from "../../components/ReturnBookForm/ReturnBookForm.jsx";
 import CreateBookForm from "../../components/createBookForm/createBookForm.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Books = () => {
     const [books, setBooks] = useState([])
     const [searchValue, setSearchValue] = useState("")
+    const navigate = useNavigate();
 
     const coverPath = '/img/'
 
@@ -23,7 +25,7 @@ const Books = () => {
         },
         {
             name: 'image',
-            selector: row => <img className="book-cover" src={`${coverPath}`+row.image+'.png'}  alt="book cover"/>,
+            selector: row => <img className="book-cover" src={`${coverPath}` + row.image + '.png'} alt="book cover" />,
         },
         {
             name: 'genre',
@@ -43,7 +45,7 @@ const Books = () => {
         },
         {
             name: 'available',
-            selector: row => row.available===true ? 'Yes' : 'No',
+            selector: row => row.available === true ? 'Yes' : 'No',
         },
         {
             name: 'book state',
@@ -71,23 +73,40 @@ const Books = () => {
     };
 
     useEffect(() => {
-        getBooks().then(({data}) => {
+        getBooks().then(({ data }) => {
             setBooks(data)
         })
     }, [])
 
+    const showCreateBookForm = () => {
+        document.getElementById("create-book-modal").style.display = "flex"
+    }
+
+    const showReturnBookForm = () => {
+        document.getElementById("return-book-modal").style.display = "flex"
+    }
+
     return books ? (
         <>
+            <button className="back-button" onClick={() => navigate("/")}>&lt;-</button>
             <div className="book-list-header">
                 <div className="text">Book List</div>
             </div>
-            <CreateBookForm />
-            <ReturnBookForm />
-            <input type="text"
-                   onChange={handleSearchInputChange}
-                   value={searchValue}
-                   placeholder="Search by name"
-            />
+            <div className="manage-and-search">
+                <div className="search">
+                    <input type="text"
+                        onChange={handleSearchInputChange}
+                        value={searchValue}
+                        placeholder="Search by name"
+                        className="input-default"
+                    />
+                    <button className="default-btn btn-manage" onClick={() => setSearchValue("")}>Clear</button>
+                </div>
+                <div className="manage">
+                    <button className="default-btn btn-manage" onClick={() => showCreateBookForm()}>Create Book</button>
+                    <button className="default-btn btn-manage" onClick={() => showReturnBookForm()}>Return Book</button>
+                </div>
+            </div>
             <div className="book-list">
                 {books.length ? <DataTable
                     columns={columns}
@@ -97,6 +116,8 @@ const Books = () => {
                     paginationRowsPerPageOptions={[10, 20]}
                 /> : null}
             </div>
+            <CreateBookForm />
+            <ReturnBookForm />
         </>
     ) : null;
 }
