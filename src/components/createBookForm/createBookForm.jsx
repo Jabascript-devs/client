@@ -72,7 +72,7 @@ const CreateBookForm = () => {
 
                         <button className="default-btn" type="submit">Submit</button>
                     </form>
-                    <div id="response">{result.length ? result : null}</div>
+                    <div id="response">{result.length ? "Response: " + result : null}</div>
                 </div>
             </div>
         </div>

@@ -42,7 +42,7 @@ const ReturnBookForm = () => {
                         </div>
                         <button className="default-btn form-margin" type="submit" >Submit</button>
                     </form>
-                    <div id="response">{returnBookResult.length? returnBookResult: null}</div>
+                    <div id="response">{returnBookResult.length ?  "Response: " +  returnBookResult : null}</div>
                 </div>
             </div>
         </div>
