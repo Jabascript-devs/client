@@ -6,7 +6,6 @@ import {getBook} from "../../api/books.js";
 import BookProperties from "../../components/BookProperties/BookProperties.jsx"
 import EditBookForm from "../../components/EditBookForm/EditBookForm.jsx";
 import OrderBookForm from "../../components/OrderBookForm/OrderBookForm.jsx";
-import ReturnBookForm from "../../components/ReturnBookForm/ReturnBookForm.jsx";
 import DeleteBookForm from "../../components/DeleteBookForm/DeleteBookForm.jsx";
 
 const Book = () => {
