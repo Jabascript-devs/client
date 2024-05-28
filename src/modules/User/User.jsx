@@ -11,16 +11,20 @@ import DeleteUser from "../../components/UserComponents/DeleteUser/DeleteUser";
 
 const columns = [
     {
-        name: 'id',
+        name: 'order id',
         selector: row => row.id,
     },
     {
-        name: 'taken date',
+        name: 'date taken',
         selector: row => row.dateTaken,
     },
     {
-        name: 'return date',
-        selector: row => row.dateTaken,
+        name: 'expected date return',
+        selector: row => row.expectedDateReturn,
+    },
+    {
+        name: 'date returned',
+        selector: row => row.dateReturned,
     },
     {
         name: 'book',

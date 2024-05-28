@@ -8,6 +8,7 @@ const UserProperties = (props) => {
     return currentUser ? (
         <div className="user-props">
             <h2 className="user-name">Full name: {currentUser.fullName}</h2>
+            <h3 className="user-deposit">User id: {currentUser.id}</h3>
             <h3 className="user-deposit">Balance: {currentUser.balance}</h3>
             <h3 className="user-day-price">Address: {currentUser.address}</h3>
             <h3 className="user-discount">Phone number: {currentUser.phoneNumber}</h3>

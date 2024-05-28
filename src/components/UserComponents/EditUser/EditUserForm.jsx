@@ -17,11 +17,8 @@ const EditUserForm = (props) => {
     } = useForm()
 
     const editUser = (user) => {
-        const filteredUser = Object.fromEntries(
-            Object.entries(user).filter(([, value]) => value !== "")
-        );
-        console.log('editUser', filteredUser);
-        patchUser(userId, filteredUser).then(result => setEditUserResult(result.status.toString()))
+        console.log('editUser', user);
+        patchUser(userId, user).then(result => setEditUserResult(result.status.toString()))
     }
 
     useEffect(() => {
@@ -30,7 +27,7 @@ const EditUserForm = (props) => {
             setValue("balance", currentUser.balance)
             setValue("address", currentUser.address)
             setValue("phoneNumber", currentUser.phoneNumber)
-            setValue("userCategory", currentUser.userCategory ? currentUser.userCategory : "none")
+            setValue("userCategory", currentUser.userCategory ? currentUser.userCategory : "")
         }
     }, [currentUser]);
 
@@ -71,7 +68,8 @@ const EditUserForm = (props) => {
 }
 
 EditUserForm.propTypes = {
-    userId: PropTypes.string.isRequired
+    userId: PropTypes.string.isRequired,
+    currentUser: PropTypes.object.isRequired
 };
 
 export default EditUserForm;
